@@ -8,7 +8,8 @@ services:
     ports:
       - 3606:3606
     volumes:
-      - /Users/hanako/workspace/my_first_hhvm:/app
+    #  - マウントしたい作業ディレクトリを指定:/app
+    tty: true
 
   db:
     image: mysql
