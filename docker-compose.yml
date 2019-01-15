@@ -1,0 +1,26 @@
+version: '2'
+services:
+  server:
+    image: ubuntu
+
+  hhvm:
+    image: hhvm/hhvm
+    ports:
+      - 3606:3606
+    volumes:
+      - /Users/hanako/workspace/my_first_hhvm:/app
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
